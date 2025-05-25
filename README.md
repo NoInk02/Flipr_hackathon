@@ -84,8 +84,38 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 
 ---
 
-## Code Reference
+## Tech Stack
 
+### Backend & Core Logic
+- **Python** — Main language for chatbot logic, feedback processing, ticketing, and analytics.
+- **Google Generative AI (Gemini) API** — Used for chatbot responses (RAG), feedback summarization, and CSAT analysis.
+
+### Data Storage & Vector Search
+- **ChromaDB** — Vector database to store document embeddings and perform semantic search.
+- **JSON Files** — For storing company documents, chat sessions, feedback, and tickets.
+- **MongoDB** 
+
+### Document Processing
+- **PDF to JSON conversion tools** (PyMuPDF) — Extract company documents into structured JSON for chatbot knowledge base.
+
+### Emotion Detection
+- **Pretrained Emotion Classification Model** — Detects user emotions from chat inputs to enable adaptive responses and analytics(from hugging face).
+
+### Web / Frontend (Implied)[fill it]
+- REACT
+- Web framework for:
+  - Company registration and document uploads
+  - Client chatbot interface
+  - Agent dashboard and ticket management
+  - Admin analytics dashboard
+- (Possible frameworks: Flask/Django for backend; React/Vue/Angular for frontend)
+
+### Email & Notification
+- **Nodemailer** — Sends ticket notifications to agents.
+
+### Analytics & Data Processing
+- Python `statistics` module — Computes CSAT scores and other metrics.
+- File I/O for JSON data handling.
 
 ---
 
