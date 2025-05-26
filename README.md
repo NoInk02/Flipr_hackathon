@@ -247,10 +247,12 @@ You can manage sensitive values with a `.env` file and load them via `python-dot
 ## Getting Started
 
 ### 1. Clone the repository
-```bash
+```
+bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo/backend
 
+```
 
 
 ### 2. Start Backend using main.py
