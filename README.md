@@ -18,7 +18,14 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 ## Files description
 
 - **`company_data.pdf`**
-  Contains dummy data of a delivery company 
+  Contains dummy data of a delivery company
+
+- **`final_customer_chatbot`**
+  Contains the file that implement just the chatbot for customer use. Run the test_chatbot.py and the output will look similar to files present in chat sessions folder.
+
+  - **`agent_chatbot`**
+  Contains the file that implement just the chatbot for agent use. Run the test_chat.py and the output will look similar to files present in chat sessions folder.
+
 
 ---
 
@@ -120,146 +127,6 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 
 ---
 
-## Tech Stack
-
-# Backend
-
-This repository contains the **backend** of a fullstack project built using **FastAPI**. It manages multiple components such as companies, clients, admins, ticketing, and real-time chat, with integration for chatbot support and JWT-based authentication.
-
----
-
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Project Structure](#project-structure)
-- [Core Components](#core-components)
-- [Support Utilities](#support-utilities)
-- [Configuration](#configuration)
-- [Getting Started](#getting-started)
-- [Tech Stack](#tech-stack)
-
----
-
-## Project Overview
-
-This backend exposes a REST API for managing:
-
-- Companies & their admins  
-- Clients & their interactions  
-- Ticketing system  
-- Chat communication, including bot integration  
-- Secure access via JWT tokens
-
-It connects to a **MongoDB** database and optionally integrates with **Gemini API** for AI functionality.
-
----
-
-## Project Structure
-
-```bash
-.
-├── routers/                  # API route handlers for each component
-│   ├── company.py
-│   ├── client.py
-│   ├── helpers.py
-│   ├── company_admins.py
-│   ├── tickets.py
-│   └── chats.py
-│
-├── database/                # Database IO logic per component
-│   ├── company.py
-│   ├── client.py
-│   ├── helpers.py
-│   ├── company_admins.py
-│   ├── tickets.py
-│   └── chats.py
-│
-├── support/                 # Utility modules
-│   ├── jwt_handler.py       # JWT token creation/verification
-│   ├── chatbot.py           # Chatbot integration logic
-│   ├── logger.py            # Custom logging system
-│   └── python_to_json.py         # File type conversion utilities
-│
-├── config/
-│   └── config.py            # Centralized app settings and secrets
-│
-├── main.py                  # FastAPI app entry point
-├── requirements.txt         # Python dependencies
-```
-
-## Core Components
-
-### Company
-Manages company profiles, metadata, onboarding, and CRUD operations.
-
-### Client
-Handles client registration, preferences, associations with companies, and ticket initiation.
-
-### Helpers
-Shared utility functions (e.g. pagination, token utilities) to DRY up business logic.
-
-### Company Admins
-Manages role-based company user permissions, creation, and updates.
-
-### Tickets
-Support ticket lifecycle: creation, assignment, resolution, and tracking.
-
-### Chats
-Real-time or deferred messaging system between clients and company admins, linked to tickets or standalone.
-
----
-
-## Support Utilities
-
-### JWT Handler (`jwt_handler.py`)
-- Encodes and decodes access tokens  
-- Verifies user roles and token expiration  
-- Central to authentication and route protection
-
-### Chatbot (`chatbot.py`)
-- Custom AI assistant integration  
-- Capable of responding to support queries or escalating to a human admin  
-- Uses Gemini API for LLM-based answers
-
-### Logger (`logger.py`)
-- Custom logging with timestamped logs and severity levels  
-- Can be extended for file logging or external log monitoring
-
-### Converter (`converter.py`)
-- Handles file format transformations (e.g. image to PDF, doc to text)  
-- Used in ticket attachments or uploads
-
----
-
-## Configuration
-
-All critical settings are housed in `config/config.py`. These include:
-
-- MongoDB URI  
-- JWT secret key & algorithm  
-- Gemini API key  
-- Environment toggles (e.g. `DEBUG`, `PRODUCTION`)
-
-You can manage sensitive values with a `.env` file and load them via `python-dotenv` or similar.
-
----
-
-## Getting Started
-
-### 1. Clone the repository
-```
-bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo/backend
-
-```
-
-
-### 2. Start Backend using main.py
-```
-python main.py
-```
-
 ### Data Storage & Vector Search
 - **ChromaDB** — Vector database to store document embeddings and perform semantic search.
 - **JSON Files** — For storing company documents, chat sessions, feedback, and tickets.
@@ -271,14 +138,9 @@ python main.py
 ### Emotion Detection
 - **Pretrained Emotion Classification Model** — Detects user emotions from chat inputs to enable adaptive responses and analytics(from hugging face).
 
-### Web / Frontend (Implied)[fill it]
-- REACT
-- Web framework for:
-  - Company registration and document uploads
-  - Client chatbot interface
-  - Agent dashboard and ticket management
-  - Admin analytics dashboard
-- (Possible frameworks: Flask/Django for backend; React/Vue/Angular for frontend)
+### Web / Frontend (Implied)
+- **Next.js** - React-based framework used for building frontend UI
+- **Tailwind CSS** - Utility-first CSS framework for styling
 
 ### Analytics & Data Processing
 - Python `statistics` module — Computes CSAT scores and other metrics.
@@ -288,11 +150,12 @@ python main.py
 
 ## Setup & Configuration
 
-- Requires Python 3.8+ and relevant dependencies listed in `requirements.txt`  
-- Google Gemini API key needed for language model interactions  
-- Configure environment variables for API keys securely  
-- Document conversion tools for PDF → JSON preprocessing  
+1. Navigate to the `supportflow` directory.  
+2. Run `npm i` to install dependencies.  
+3. Create a `.env.local` file in the same directory as `package.json` with the required environment variables (see example).  
+4. Run `npm run dev` to start the development server.
 
+- For other available commands and modes, please check the `package.json` file in the `supportflow` directory.  
 --
 
 ## Additional Features (Located in `other_files/` Folder)
