@@ -142,6 +142,23 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 - **Next.js** - React-based framework used for building frontend UI
 - **Tailwind CSS** - Utility-first CSS framework for styling
 
+### Backend
+- JWT Handler (jwt_handler.py)
+  Encodes and decodes access tokens  
+  Verifies user roles and token expiration  
+  Central to authentication and route protection
+  
+- Logger (logger.py)
+  Custom logging with timestamped logs and severity levels  
+  Can be extended for file logging or external log monitoring
+
+  All critical settings are housed in config/config.py. These include:
+
+- MongoDB URI  
+- JWT secret key & algorithm  
+- Gemini API key  
+- Environment toggles (e.g. DEBUG, PRODUCTION)
+  
 ### Analytics & Data Processing
 - Python `statistics` module — Computes CSAT scores and other metrics.
 - File I/O for JSON data handling.
