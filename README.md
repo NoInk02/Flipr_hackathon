@@ -15,6 +15,35 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 
 ---
 
+## Architecture Overview for customer chatbot
+
+```text
+ User Input
+    │
+    ▼
+[Emotion Detection] ◄────────────┐
+    │                            │
+    ▼                            │
+[Query Embedding]                │
+    │                            │
+    ▼                            │
+[Semantic Search in ChromaDB]    │
+    │                            │
+    ▼                            │
+[Build Gemini Prompt with Context & Emotion]
+    │
+    ▼
+[Gemini 1.5 Flash Response]
+    │
+    ▼
+[Log to Session File]
+    │
+    ▼
+[Feedback Prompt (manual or Gemini-generated)]
+```
+
+---
+
 ## System Workflow
 
 1. **Company Registration & Document Upload**  
