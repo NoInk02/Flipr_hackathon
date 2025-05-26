@@ -23,7 +23,7 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 - **`final_customer_chatbot`**
   Contains the file that implement just the chatbot for customer use. Run the test_chatbot.py and the output will look similar to files present in chat sessions folder.
 
-  - **`agent_chatbot`**
+- **`agent_chatbot`**
   Contains the file that implement just the chatbot for agent use. Run the test_chat.py and the output will look similar to files present in chat sessions folder.
 
 
