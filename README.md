@@ -129,7 +129,7 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 ### Data Storage & Vector Search
 - **ChromaDB** — Vector database to store document embeddings and perform semantic search.
 - **JSON Files** — For storing company documents, chat sessions, feedback, and tickets.
-- **MongoDB** 
+- **MongoDB** — NoSQL database for scalable storage of users, tickets, and system logs.
 
 ### Document Processing
 - **PDF to JSON conversion tools** (PyMuPDF) — Extract company documents into structured JSON for chatbot knowledge base.
