@@ -185,7 +185,7 @@ It connects to a **MongoDB** database and optionally integrates with **Gemini AP
 │
 ├── main.py                  # FastAPI app entry point
 ├── requirements.txt         # Python dependencies
-
+```
 
 ## Core Components
 
