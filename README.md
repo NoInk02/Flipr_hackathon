@@ -155,8 +155,9 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 3. Create a `.env.local` file in the same directory as `package.json` with the required environment variables (see example).  
 4. Run `npm run dev` to start the development server.
 
-- For other available commands and modes, please check the `package.json` file in the `supportflow` directory.  
---
+- For other available commands and modes, please check the `package.json` file in the `supportflow` directory.
+
+---
 
 ## Additional Features (Located in `other_files/` Folder)
 
@@ -208,4 +209,3 @@ This platform framework empowers any company to deploy an AI-powered customer su
 
 ---
 
-*Powered by Google Gemini, ChromaDB, and cutting-edge AI technology.*
