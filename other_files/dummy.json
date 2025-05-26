@@ -1,0 +1,115 @@
+[
+  {
+    "summary": {
+      "average_score": 2.9,
+      "total_ratings": 3,
+      "low_score_count": 2,
+      "average_handling_time": 88.90,
+      "average_confidence": -0.18,
+      "emotion_distribution": {
+        "neutral": 3,
+        "sadness": 2,
+        "joy": 0
+      }
+    },
+    "suggestions": "1. Improve empathy and confidence calibration.\n2. Retrain on emotion recognition and escalation policies.\n3. Mixed emotions with slightly negative confidence suggest confusion in responses.",
+    "timestamp": "2025-05-25T20:30:12.321654"
+  },
+  {
+    "summary": {
+      "average_score": 4.8,
+      "total_ratings": 6,
+      "low_score_count": 0,
+      "average_handling_time": 58.34,
+      "average_confidence": 0.67,
+      "emotion_distribution": {
+        "neutral": 2,
+        "joy": 7,
+        "sadness": 0
+      }
+    },
+    "suggestions": "1. Keep up the good work on speed and accuracy.\n2. Consider adding proactive help suggestions.\n3. High confidence and joy indicate positive user experiences.",
+    "timestamp": "2025-05-26T08:12:30.456789"
+  },
+  {
+  "summary": {
+    "average_score": 3.7,
+    "total_ratings": 4,
+    "low_score_count": 1,
+    "average_handling_time": 70.21,
+    "average_confidence": 0.12,
+    "emotion_distribution": {
+      "neutral": 4,
+      "sadness": 1,
+      "joy": 2
+    }
+  },
+  "suggestions": "1. Focus on clarity and response speed.\n2. Increase training on complex queries.\n3. Mixed emotions and modest confidence show room for improvement.",
+  "timestamp": "2025-05-25T10:05:45.987654"
+},
+{
+  "summary": {
+    "average_score": 2.1,
+    "total_ratings": 3,
+    "low_score_count": 3,
+    "average_handling_time": 95.75,
+    "average_confidence": -0.65,
+    "emotion_distribution": {
+      "neutral": 1,
+      "sadness": 5,
+      "joy": 0
+    }
+  },
+  "suggestions": "1. Key areas for improvement: Empathy and accuracy are critical.\n2. Recommendations: Retrain with empathetic examples, improve intent detection.\n3. Patterns: Low confidence with predominance of sadness suggests frustration.",
+  "timestamp": "2025-05-24T22:40:17.654321"
+},
+{
+  "summary": {
+    "average_score": 4.2,
+    "total_ratings": 5,
+    "low_score_count": 0,
+    "average_handling_time": 65.48,
+    "average_confidence": 0.45,
+    "emotion_distribution": {
+      "neutral": 3,
+      "joy": 4,
+      "sadness": 0
+    }
+  },
+  "suggestions": "1. Key areas for improvement: Maintain high confidence and increase personalization.\n2. Recommendations: Fine-tune on positive interactions, add dynamic responses.\n3. Patterns: High confidence correlates with mostly neutral and joyful emotions.",
+  "timestamp": "2025-05-25T15:10:00.123456"
+},
+{
+  "summary": {
+    "average_score": 3.5,
+    "total_ratings": 2,
+    "low_score_count": 1,
+    "average_handling_time": 75.48,
+    "average_confidence": -0.27,
+    "emotion_distribution": {
+      "neutral": 3,
+      "sadness": 1,
+      "joy": 2
+    }
+  },
+  "suggestions": "1. Key areas for improvement: increase empathy and confidence in responses.\n2. Recommendations: retrain on varied emotional data, implement confidence thresholds.\n3. Patterns: low confidence correlates with mixed emotions, leading to user dissatisfaction.",
+  "timestamp": "2025-05-25T14:12:08.123456"
+},
+{
+  "summary": {
+    "average_score": 3,
+    "total_ratings": 1,
+    "low_score_count": 1,
+    "average_handling_time": 82.02,
+    "average_confidence": -0.33,
+    "emotion_distribution": {
+      "neutral": 2,
+      "sadness": 2,
+      "joy": 1
+    }
+  },
+  "suggestions": "1. **Key Areas for Improvement:**  Empathy, accuracy (low confidence), and potentially speed (though sample size is small).\n\n2. **Actionable Recommendations:**\n    * Retrain the model on more diverse and empathetic responses.\n    * Improve accuracy by expanding training data and incorporating better sentiment analysis.\n    * Analyze the single low rating interaction for specific failure points.\n    * Consider reducing handling time if possible without sacrificing accuracy.\n\n\n3. **Patterns in Emotion and Confidence:** The low confidence (-0.33) and mix of neutral, sad, and joy emotions suggest the chatbot is struggling to accurately understand and respond to user needs, resulting in frustrating interactions.  The small sample size limits definitive conclusions.",
+  "timestamp": "2025-05-25T12:45:33.952985"
+}
+
+]
