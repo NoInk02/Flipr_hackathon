@@ -15,6 +15,13 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 
 ---
 
+## Files description
+
+- **`company_data.pdf`**
+  Contains dummy data of a delivery company 
+
+---
+
 ## Architecture Overview for chatbot
 
 ```Text
