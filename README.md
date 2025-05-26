@@ -41,6 +41,21 @@ This framework provides a smarter, AI-driven solution to transform customer supp
     ▼
 [Feedback Prompt (manual or Gemini-generated)]
 ```
+graph TD
+    A[User Input] --> B{Ticket ID Detection / Query Understanding}
+    B -- Ticket ID Found --> C[Format Ticket Response / Suggest Solutions]
+    B -- No Ticket ID --> D[Query Embedding]
+    D --> E[Search Knowledge Base (ChromaDB)]
+    D --> F[Search Ticket History (ChromaDB)]
+    E --> G[Relevant KB Context]
+    F --> H[Relevant Ticket Context]
+    G & H --> I[Build Prompt with Context & History]
+    I --> J[Gemini 1.5 Flash Generation]
+    J --> K[Process Response & Compute Confidence]
+    K --> L[Update Chat History]
+    L --> M[Log to Session File]
+    K --> N[Optional Feedback Prompt]
+
 
 ---
 
