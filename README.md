@@ -15,7 +15,7 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 
 ---
 
-## Architecture Overview for customer chatbot
+## Architecture Overview for chatbot
 
 ```Text
  User Input
@@ -41,21 +41,6 @@ This framework provides a smarter, AI-driven solution to transform customer supp
     ▼
 [Feedback Prompt (manual or Gemini-generated)]
 ```
-graph TD
-    A[User Input] --> B{Ticket ID Detection / Query Understanding}
-    B -- Ticket ID Found --> C[Format Ticket Response / Suggest Solutions]
-    B -- No Ticket ID --> D[Query Embedding]
-    D --> E[Search Knowledge Base (ChromaDB)]
-    D --> F[Search Ticket History (ChromaDB)]
-    E --> G[Relevant KB Context]
-    F --> H[Relevant Ticket Context]
-    G & H --> I[Build Prompt with Context & History]
-    I --> J[Gemini 1.5 Flash Generation]
-    J --> K[Process Response & Compute Confidence]
-    K --> L[Update Chat History]
-    L --> M[Log to Session File]
-    K --> N[Optional Feedback Prompt]
-
 
 ---
 
@@ -170,14 +155,45 @@ graph TD
 - Configure environment variables for API keys securely  
 - Document conversion tools for PDF → JSON preprocessing  
 
----
+--
+
+## Additional Features (Located in `other_files/` Folder)
+
+We have also developed several supplementary modules that enhance feedback collection, CSAT analysis, and real-time analytics visualization. These are currently standalone due to time constraints but represent key planned capabilities for future integration.
+
+### Files and Descriptions
+
+- **`feedback.py`**  
+  Runs when a user closes the chat window to prompt for feedback. It sends the entire chat history plus any user feedback to Google Gemini via API to generate a summarized human experience report.
+
+- **`feedback_test.py`**  
+  Contains test cases for validating the functionality of `feedback.py`.
+
+- **`feedback.json`**  
+  Stores automatically generated feedback data after running `feedback.py` (example data included).
+
+- **`session.json`**  
+  Contains the full chat session history for which feedback is to be created.
+
+- **`csat.py`**  
+  Processes input from `feedback.json` and `session.json` to generate a summarized customer satisfaction analysis file named `session_analysis.json`.
+
+- **`session_analysis.json`**  
+  Example output from `csat.py` containing CSAT analytics data.
+
+- **`analytics.py`**  
+  Utilizes `session_analysis.json` data to generate graphs and visualizations that can be served to the frontend for real-time dashboard updates.
+
+### Current Status
+
+These modules have been implemented and tested individually but have not yet been fully integrated into the main platform workflow due to time limitations. These files can be used to implement these features into the core system, enabling enhanced feedback loops, CSAT analytics, and live administrative insights.
+
 
 ## Future Enhancements
 
 - Multi-language support  
 - Real-time agent availability tracking  
 - Deeper integration with external ticketing platforms  
-- Enhanced analytics with dashboards and alerts  
 
 ---
 
