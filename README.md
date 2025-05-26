@@ -139,9 +139,6 @@ This framework provides a smarter, AI-driven solution to transform customer supp
   - Admin analytics dashboard
 - (Possible frameworks: Flask/Django for backend; React/Vue/Angular for frontend)
 
-### Email & Notification
-- **Nodemailer** — Sends ticket notifications to agents.
-
 ### Analytics & Data Processing
 - Python `statistics` module — Computes CSAT scores and other metrics.
 - File I/O for JSON data handling.
@@ -194,6 +191,7 @@ These modules have been implemented and tested individually but have not yet bee
 - Multi-language support  
 - Real-time agent availability tracking  
 - Deeper integration with external ticketing platforms  
+- Agents can be informed upon ticket assignment using nodemailer
 
 ---
 
