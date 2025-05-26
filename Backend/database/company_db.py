@@ -12,8 +12,6 @@ logger = Logger()
 logger.user = "company_db_handler"
 
 
-# Main handler to create and delete companies
-
 class CompanyDB:
     def __init__(self):
         self.client = AsyncIOMotorClient(settings.MONGO_URI)

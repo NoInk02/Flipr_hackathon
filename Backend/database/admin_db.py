@@ -6,8 +6,6 @@ import bcrypt
 logger = Logger()
 logger.user = "admin_db_handler"
 
-# Handler for Anything to Company Admin Account IO
-
 class AdminDB:
     def __init__(self):
         self.client = AsyncIOMotorClient(settings.MONGO_URI)

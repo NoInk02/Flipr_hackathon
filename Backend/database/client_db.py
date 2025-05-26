@@ -10,9 +10,6 @@ logger = Logger()
 logger.user = "client_db_handler"
 
 
-# Handler for anything related to Company's client users in Database
-
-
 class ClientDB:
     def __init__(self):
         self.client = AsyncIOMotorClient(settings.MONGO_URI)

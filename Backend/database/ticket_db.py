@@ -6,9 +6,6 @@ import os
 import google.generativeai as genai
 
 
-# Handler for anything related to Ticket Operations in database
-
-
 genai.configure(api_key=settings.GEMINI_API_KEY)
 gemini = genai.GenerativeModel("gemini-1.5-flash")
 
@@ -30,8 +27,6 @@ Priority:
 """
     response = gemini.generate_content(prompt)
     return response.text.strip()
-
-
 
 
 

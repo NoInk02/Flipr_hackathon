@@ -70,18 +70,6 @@ class FileIDsModel(BaseModel):
     file_ids: List[str]
 
 # Routes
-@router.post("/{client_id}/create")
-async def create_chat(company_id: str, client_id: str, user = Depends(get_current_client_user)):
-    if user["company_id"] != company_id or user["username"] != client_id:
-        raise HTTPException(403, "Unauthorized")
-    chat = await chat_handler.create_chat(company_id, client_id)
-    return {
-        "chatID":chat.chatID,
-        "clientID":chat.clientID,
-        "chat_mode":chat.chat_mode,
-        "ticketID":chat.ticketID,
-        "files":chat.files
-    }
 
 
 @router.get("/{chat_id}")
@@ -205,3 +193,16 @@ async def assign_ticket(
     except Exception as e:
         logger.log_error(f"Assign ticket failed: {str(e)}")
         raise HTTPException(500, "Failed to assign ticket")
+    
+@router.post("/{client_id}/create")
+async def create_chat(company_id: str, client_id: str, user = Depends(get_current_client_user)):
+    if user["company_id"] != company_id or user["username"] != client_id:
+        raise HTTPException(403, "Unauthorized")
+    chat = await chat_handler.create_chat(company_id, client_id)
+    return {
+        "chatID":chat.chatID,
+        "clientID":chat.clientID,
+        "chat_mode":chat.chat_mode,
+        "ticketID":chat.ticketID,
+        "files":chat.files
+    }

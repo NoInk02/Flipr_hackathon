@@ -5,10 +5,7 @@ from config.config import settings
 # Configuration
 SECRET_KEY = settings.JWT_SECRET_KEY
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
-
-# File for creation and validation of JWT Tokens fo Logins
-
+ACCESS_TOKEN_EXPIRE_MINUTES = 30  # 1/2 hour
 
 def create_access_token(data: dict):
     to_encode = data.copy()

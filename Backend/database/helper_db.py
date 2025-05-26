@@ -10,9 +10,6 @@ from database.ticket_db import TicketDB
 logger = Logger()
 logger.user = "helper_db_handler"
 
-# Handler for CRUD of Helpers / Agents for company
-
-
 class HelperDB:
     def __init__(self):
         self.client = AsyncIOMotorClient(settings.MONGO_URI)

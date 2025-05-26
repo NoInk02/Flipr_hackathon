@@ -76,7 +76,7 @@ async def get_tickets(
         tickets = [t for t in tickets if t["clientID"] == token_data['username']]
 
     if token_data['type'] == "helper":
-        tickets = [t for t in tickets if t['assigned_to'] == token_data['username']]
+        tickets = [t for t in tickets if t['assigned_helper'] == token_data['username']]
 
     return tickets
 @router.get("/get_ticket/{ticket_id}")
@@ -95,7 +95,7 @@ async def get_tickets(
         tickets = [t for t in tickets if (t["clientID"] == token_data['username'] and t['ticketID']==ticket_id)]
 
     if token_data['type'] == "helper":
-        tickets = [t for t in tickets if (t['assigned_to'] == token_data['username'] and t['ticketID']==ticket_id)]
+        tickets = [t for t in tickets if (t['assigned_helper'] == token_data['username'] and t['ticketID']==ticket_id)]
 
     return tickets
 

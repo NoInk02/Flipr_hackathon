@@ -3,9 +3,6 @@ import json
 import re
 import os
 
-
-# Class for converting PDF objects to JSON
-
 class PDF_to_JSON:
     def extract_text_from_pdf(self, file_obj):
         doc = fitz.open(stream=file_obj.read(), filetype="pdf")  # read from memory

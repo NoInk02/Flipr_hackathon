@@ -122,32 +122,46 @@ class AgentChatBot:
             )
         return collection
 
+   
     def setup_ticket_chroma(self):
         client = chromadb.PersistentClient(path=self.CHROMA_PATH)
-    
-    # Force new collection
+        # Force new collection
         try:
             client.delete_collection(name=self.TICKETS_COLLECTION_NAME)
         except:
             pass
-        
         collection = client.get_or_create_collection(name=self.TICKETS_COLLECTION_NAME)
-    
+        
         if self.tickets:  # Only add if we have tickets
             print(f"Generating embeddings for {len(self.tickets)} tickets...")
             embeddings = self.embedder.encode(self.tickets, show_progress_bar=True)
-        
-        # Use ticket IDs as ChromaDB IDs for direct lookup
+            
+            # Clean metadata to remove None values
+            cleaned_metadatas = []
+            for metadata in self.ticket_metadatas:
+                cleaned_metadata = {}
+                for key, value in metadata.items():
+                    if value is not None:
+                        # Ensure value is a supported ChromaDB type
+                        if isinstance(value, (str, int, float, bool)):
+                            cleaned_metadata[key] = value
+                        else:
+                            # Convert other types to string
+                            cleaned_metadata[key] = str(value)
+                    # Skip None values entirely
+                cleaned_metadatas.append(cleaned_metadata)
+            
+            # Use ticket IDs as ChromaDB IDs for direct lookup
             ids = [meta["ticket_id"] for meta in self.ticket_metadatas]
-
+            
             collection.add(
-            documents=self.tickets,
-            embeddings=embeddings.tolist(),
-            metadatas=self.ticket_metadatas,
-            ids=ids
-        )
+                documents=self.tickets,
+                embeddings=embeddings.tolist(),
+                metadatas=cleaned_metadatas,  # Use cleaned metadata
+                ids=ids
+            )
             print(f"Added tickets to ChromaDB with IDs: {ids[:3]}...")
-    
+        
         return collection
 
 
@@ -206,6 +220,7 @@ class AgentChatBot:
     4. If you cannot find an answer, suggest articles or go find internet solutions.
     5. Do not make up information; only provide what is supported by the context.
     6. DONOT WRITE LONG PARAGRAPHS.
+    7. Absolutely dont print any of the internal monologues.
 
     Context:
     {context}
