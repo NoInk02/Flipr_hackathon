@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///home/surya/nextjs/supportFlow/supportflow/app/company/%5Bcompanyid%5D/agent/%5Bagentid%5D/page.tsx"],"sourcesContent":["\"use client\"\nimport React from 'react'\nimport { signOut } from 'next-auth/react'\nimport toast from 'react-hot-toast';\nimport { useRouter } from 'next/navigation';\n\nconst page = () => {\n  const router = useRouter()\n  const handleLogout = async () => {\n    await signOut({ redirect: false });\n    toast.success('Successfully logged out!');\n    router.push('/');\n  };\n  return (\n    <div><button onClick={handleLogout}>signOut</button></div>\n  )\n}\n\nexport default page"],"names":[],"mappings":";;;;AAEA;AACA;AACA;;;AAJA;;;;AAMA,MAAM,OAAO;;IACX,MAAM,SAAS,CAAA,GAAA,qIAAA,CAAA,YAAS,AAAD;IACvB,MAAM,eAAe;QACnB,MAAM,CAAA,GAAA,iJAAA,CAAA,UAAO,AAAD,EAAE;YAAE,UAAU;QAAM;QAChC,0JAAA,CAAA,UAAK,CAAC,OAAO,CAAC;QACd,OAAO,IAAI,CAAC;IACd;IACA,qBACE,6LAAC;kBAAI,cAAA,6LAAC;YAAO,SAAS;sBAAc;;;;;;;;;;;AAExC;GAVM;;QACW,qIAAA,CAAA,YAAS;;;uCAWX"}},
+    {"offset": {"line": 54, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 64, "column": 0}, "map": {"version":3,"sources":["file:///home/surya/nextjs/supportFlow/supportflow/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0]}},
+    {"offset": {"line": 65, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

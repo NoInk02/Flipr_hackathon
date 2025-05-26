@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 31, "column": 0}, "map": {"version":3,"sources":["file:///home/surya/nextjs/supportFlow/supportflow/app/company/%5Bcompanyid%5D/agent/%5Bagentid%5D/page.tsx"],"sourcesContent":["import React from 'react'\nimport { signOut } from 'next-auth/react'\nimport toast from 'react-hot-toast';\nimport Router from 'next/router';\nimport { useRouter } from 'next/router';\nconst page = () => {\n  const router=useRouter()\n  const handleLogout = async () => {\n    await signOut({ redirect: false });\n    toast.success('Successfully logged out!');\n    router.push('/');\n  };\n  return (\n    <div><button onClick={handleLogout}>signOut</button></div>\n  )\n}\n\nexport default page"],"names":[],"mappings":";;;;AACA;AACA;AAEA;;;;;AACA,MAAM,OAAO;IACX,MAAM,SAAO,CAAA,GAAA,8HAAA,CAAA,YAAS,AAAD;IACrB,MAAM,eAAe;QACnB,MAAM,CAAA,GAAA,8IAAA,CAAA,UAAO,AAAD,EAAE;YAAE,UAAU;QAAM;QAChC,uJAAA,CAAA,UAAK,CAAC,OAAO,CAAC;QACd,OAAO,IAAI,CAAC;IACd;IACA,qBACE,8OAAC;kBAAI,cAAA,8OAAC;YAAO,SAAS;sBAAc;;;;;;;;;;;AAExC;uCAEe"}},
+    {"offset": {"line": 67, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 78, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 78, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

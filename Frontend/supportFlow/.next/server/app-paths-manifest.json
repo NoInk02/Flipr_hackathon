@@ -1,0 +1,17 @@
+{
+  "/admin/[username]/[companyid]/page": "app/admin/[username]/[companyid]/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/page": "app/page.js",
+  "/register/page": "app/register/page.js",
+  "/signin/page": "app/signin/page.js",
+  "/admin/[username]/page": "app/admin/[username]/page.js",
+  "/company/page": "app/company/page.js",
+  "/company/[companyid]/agentlogin/page": "app/company/[companyid]/agentlogin/page.js",
+  "/company/[companyid]/agent/[agentid]/page": "app/company/[companyid]/agent/[agentid]/page.js",
+  "/company/[companyid]/clientlogin/page": "app/company/[companyid]/clientlogin/page.js",
+  "/company/[companyid]/clientregister/page": "app/company/[companyid]/clientregister/page.js",
+  "/company/[companyid]/client/[clientid]/page": "app/company/[companyid]/client/[clientid]/page.js",
+  "/company/[companyid]/client/[clientid]/[ticketid]/page": "app/company/[companyid]/client/[clientid]/[ticketid]/page.js",
+  "/company/[companyid]/agent/[agentid]/[ticketid]/page": "app/company/[companyid]/agent/[agentid]/[ticketid]/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
+}

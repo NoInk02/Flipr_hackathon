@@ -1,0 +1,51 @@
+{
+  "sorted_middleware": [],
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge/chunks/_b0d7e7._.js",
+        "server/edge/chunks/[root of the server]__70655b._.js",
+        "server/edge/chunks/edge-wrapper_d4e226.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/admin/:path*{(\\\\.json)}?",
+          "originalSource": "/admin/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/company/:companyid/client/:clientid/:path*{(\\\\.json)}?",
+          "originalSource": "/company/:companyid/client/:clientid/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/company/:companyid/agent/:agentid/:path*{(\\\\.json)}?",
+          "originalSource": "/company/:companyid/agent/:agentid/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/company/:companyid/clientlogin{(\\\\.json)}?",
+          "originalSource": "/company/:companyid/clientlogin"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/company/:companyid/clientregister{(\\\\.json)}?",
+          "originalSource": "/company/:companyid/clientregister"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/company/:companyid/agentlogin{(\\\\.json)}?",
+          "originalSource": "/company/:companyid/agentlogin"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "vZ5ewOpZQXgi49VfUKWhE08uyryj7TBpG/6BwWmsjrQ=",
+        "__NEXT_PREVIEW_MODE_ID": "ee3eb1f5beb4de2a37122261056d3a92",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "72a814036fb4abf2efe9e176fc781bc47b74b919121046296c82bc282c930451",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "0e678fb4fc1c13dd19bab99bdbd4b95fb5ccb7c01ea825f5a727fd6f50fd4e81"
+      }
+    }
+  },
+  "instrumentation": null,
+  "functions": {}
+}

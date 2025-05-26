@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///home/surya/nextjs/supportFlow/supportflow/app/company/%5Bcompanyid%5D/client/%5Bclientid%5D/page.tsx"],"sourcesContent":["\"use client\"\nimport { button } from 'framer-motion/client'\nimport { signOut } from 'next-auth/react'\nimport React from 'react'\nimport { useState } from 'react';\nimport { signIn } from 'next-auth/react';\nimport { useRouter } from 'next/navigation';\nimport { Button, TextField, Box, Typography, Container, Link as MuiLink, Alert, Card, CardContent , CircularProgress} from '@mui/material';\nimport Link from 'next/link';\nimport toast from 'react-hot-toast';\nconst page = () => {\n  const router=useRouter()\n  return (\n    <button onClick={async () => {\n      await signOut({ redirect: false });\n      toast.success('Successfully logged out!');\n      router.push('/');\n    }}>\n      logout\n      \n    </button>\n  )\n}\n\nexport default page"],"names":[],"mappings":";;;;AAEA;AAIA;AAGA;;;AATA;;;;AAUA,MAAM,OAAO;;IACX,MAAM,SAAO,CAAA,GAAA,qIAAA,CAAA,YAAS,AAAD;IACrB,qBACE,6LAAC;QAAO,SAAS;YACf,MAAM,CAAA,GAAA,iJAAA,CAAA,UAAO,AAAD,EAAE;gBAAE,UAAU;YAAM;YAChC,0JAAA,CAAA,UAAK,CAAC,OAAO,CAAC;YACd,OAAO,IAAI,CAAC;QACd;kBAAG;;;;;;AAKP;GAZM;;QACS,qIAAA,CAAA,YAAS;;;uCAaT"}},
+    {"offset": {"line": 47, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 57, "column": 0}, "map": {"version":3,"sources":["file:///home/surya/nextjs/supportFlow/supportflow/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0]}},
+    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
