@@ -122,14 +122,146 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 
 ## Tech Stack
 
-### Backend & Core Logic
-- **Python** — Main language for chatbot logic, feedback processing, ticketing, and analytics.
-- **Google Generative AI (Gemini) API** — Used for chatbot responses (RAG), feedback summarization, and CSAT analysis.
+# Backend
+
+This repository contains the **backend** of a fullstack project built using **FastAPI**. It manages multiple components such as companies, clients, admins, ticketing, and real-time chat, with integration for chatbot support and JWT-based authentication.
+
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Project Structure](#project-structure)
+- [Core Components](#core-components)
+- [Support Utilities](#support-utilities)
+- [Configuration](#configuration)
+- [Getting Started](#getting-started)
+- [Tech Stack](#tech-stack)
+
+---
+
+## Project Overview
+
+This backend exposes a REST API for managing:
+
+- Companies & their admins  
+- Clients & their interactions  
+- Ticketing system  
+- Chat communication, including bot integration  
+- Secure access via JWT tokens
+
+It connects to a **MongoDB** database and optionally integrates with **Gemini API** for AI functionality.
+
+---
+
+## Project Structure
+
+```bash
+.
+├── routers/                  # API route handlers for each component
+│   ├── company.py
+│   ├── client.py
+│   ├── helpers.py
+│   ├── company_admins.py
+│   ├── tickets.py
+│   └── chats.py
+│
+├── database/                # Database IO logic per component
+│   ├── company.py
+│   ├── client.py
+│   ├── helpers.py
+│   ├── company_admins.py
+│   ├── tickets.py
+│   └── chats.py
+│
+├── support/                 # Utility modules
+│   ├── jwt_handler.py       # JWT token creation/verification
+│   ├── chatbot.py           # Chatbot integration logic
+│   ├── logger.py            # Custom logging system
+│   └── python_to_json.py         # File type conversion utilities
+│
+├── config/
+│   └── config.py            # Centralized app settings and secrets
+│
+├── main.py                  # FastAPI app entry point
+├── requirements.txt         # Python dependencies
+
+
+## Core Components
+
+### Company
+Manages company profiles, metadata, onboarding, and CRUD operations.
+
+### Client
+Handles client registration, preferences, associations with companies, and ticket initiation.
+
+### Helpers
+Shared utility functions (e.g. pagination, token utilities) to DRY up business logic.
+
+### Company Admins
+Manages role-based company user permissions, creation, and updates.
+
+### Tickets
+Support ticket lifecycle: creation, assignment, resolution, and tracking.
+
+### Chats
+Real-time or deferred messaging system between clients and company admins, linked to tickets or standalone.
+
+---
+
+## Support Utilities
+
+### JWT Handler (`jwt_handler.py`)
+- Encodes and decodes access tokens  
+- Verifies user roles and token expiration  
+- Central to authentication and route protection
+
+### Chatbot (`chatbot.py`)
+- Custom AI assistant integration  
+- Capable of responding to support queries or escalating to a human admin  
+- Uses Gemini API for LLM-based answers
+
+### Logger (`logger.py`)
+- Custom logging with timestamped logs and severity levels  
+- Can be extended for file logging or external log monitoring
+
+### Converter (`converter.py`)
+- Handles file format transformations (e.g. image to PDF, doc to text)  
+- Used in ticket attachments or uploads
+
+---
+
+## Configuration
+
+All critical settings are housed in `config/config.py`. These include:
+
+- MongoDB URI  
+- JWT secret key & algorithm  
+- Gemini API key  
+- Environment toggles (e.g. `DEBUG`, `PRODUCTION`)
+
+You can manage sensitive values with a `.env` file and load them via `python-dotenv` or similar.
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo/backend
+
+
+
+### 2. Start Backend using main.py
+```
+python main.py
+```
 
 ### Data Storage & Vector Search
 - **ChromaDB** — Vector database to store document embeddings and perform semantic search.
 - **JSON Files** — For storing company documents, chat sessions, feedback, and tickets.
-- **MongoDB** — NoSQL database for scalable storage of users, tickets, and system logs.
+- **MongoDB**- setup mongodb connection in config.py
 
 ### Document Processing
 - **PDF to JSON conversion tools** (PyMuPDF) — Extract company documents into structured JSON for chatbot knowledge base.
@@ -137,12 +269,14 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 ### Emotion Detection
 - **Pretrained Emotion Classification Model** — Detects user emotions from chat inputs to enable adaptive responses and analytics(from hugging face).
 
-### Web / Frontend
-
-- **Next.js** — React-based framework used for building the frontend UI with server-side rendering and API routes.  
-- **Tailwind CSS** — Utility-first CSS framework for styling and responsive design.  
-
----
+### Web / Frontend (Implied)[fill it]
+- REACT
+- Web framework for:
+  - Company registration and document uploads
+  - Client chatbot interface
+  - Agent dashboard and ticket management
+  - Admin analytics dashboard
+- (Possible frameworks: Flask/Django for backend; React/Vue/Angular for frontend)
 
 ### Analytics & Data Processing
 - Python `statistics` module — Computes CSAT scores and other metrics.
@@ -152,12 +286,11 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 
 ## Setup & Configuration
 
-  1. Navigate to the `supportflow` directory.  
-  2. Run `npm i` to install dependencies.  
-  3. Create a `.env.local` file in the same directory as `package.json` with the required environment variables (see example `.env.local.example` if provided).  
-  4. Run `npm run dev` to start the development server.  
-- For other available commands and modes, please check the `package.json` file in the `supportflow` directory.
- 
+- Requires Python 3.8+ and relevant dependencies listed in `requirements.txt`  
+- Google Gemini API key needed for language model interactions  
+- Configure environment variables for API keys securely  
+- Document conversion tools for PDF → JSON preprocessing  
+
 --
 
 ## Additional Features (Located in `other_files/` Folder)
@@ -190,6 +323,9 @@ We have also developed several supplementary modules that enhance feedback colle
 ### Current Status
 
 These modules have been implemented and tested individually but have not yet been fully integrated into the main platform workflow due to time limitations. These files can be used to implement these features into the core system, enabling enhanced feedback loops, CSAT analytics, and live administrative insights.
+
+
+
 
 
 ## Future Enhancements
