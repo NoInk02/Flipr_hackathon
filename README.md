@@ -17,7 +17,7 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 
 ## Architecture Overview for customer chatbot
 
-```text
+```Text
  User Input
     │
     ▼
