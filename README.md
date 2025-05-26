@@ -137,14 +137,12 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 ### Emotion Detection
 - **Pretrained Emotion Classification Model** — Detects user emotions from chat inputs to enable adaptive responses and analytics(from hugging face).
 
-### Web / Frontend (Implied)[fill it]
-- REACT
-- Web framework for:
-  - Company registration and document uploads
-  - Client chatbot interface
-  - Agent dashboard and ticket management
-  - Admin analytics dashboard
-- (Possible frameworks: Flask/Django for backend; React/Vue/Angular for frontend)
+### Web / Frontend
+
+- **Next.js** — React-based framework used for building the frontend UI with server-side rendering and API routes.  
+- **Tailwind CSS** — Utility-first CSS framework for styling and responsive design.  
+
+---
 
 ### Analytics & Data Processing
 - Python `statistics` module — Computes CSAT scores and other metrics.
@@ -154,11 +152,12 @@ This framework provides a smarter, AI-driven solution to transform customer supp
 
 ## Setup & Configuration
 
-- Requires Python 3.8+ and relevant dependencies listed in `requirements.txt`  
-- Google Gemini API key needed for language model interactions  
-- Configure environment variables for API keys securely  
-- Document conversion tools for PDF → JSON preprocessing  
-
+  1. Navigate to the `supportflow` directory.  
+  2. Run `npm i` to install dependencies.  
+  3. Create a `.env.local` file in the same directory as `package.json` with the required environment variables (see example `.env.local.example` if provided).  
+  4. Run `npm run dev` to start the development server.  
+- For other available commands and modes, please check the `package.json` file in the `supportflow` directory.
+ 
 --
 
 ## Additional Features (Located in `other_files/` Folder)
